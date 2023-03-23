@@ -1,0 +1,15 @@
+1.SELECT klient_imie, adres_miejscowosc FROM klienci JOIN adresy ON klienci.klient_id = adresy.adres_klient_id;
+2.SELECT klient_imie, adres_miejscowosc FROM klienci JOIN adresy ON klienci.klient_id = adresy.adres_klient_id WHERE klienci.klient_id IN (1,2,3,6) ORDER BY adres_miejscowosc;
+3.SELECT klient_imie, adres_ulica, adres_miejscowosc FROM klienci JOIN adresy ON klienci.klient_id = adresy.adres_klient_id WHERE adres_miejscowosc = 'Warszawa';
+4.SELECT klient_imie, adres_miejscowosc FROM klienci JOIN adresy ON klienci.klient_id = adresy.adres_klient_id WHERE adres_typ = 1 ORDER BY klient_imie;
+5.SELECT adres_id FROM adresy WHERE adres_id NOT IN (SELECT DISTINCT adres_klient_id FROM klienci);
+SELECT adres_id FROM adresy LEFT JOIN klienci ON adresy.adres_klient_id = klienci.klient_id WHERE klienci.klient_id IS NOT NULL;
+6.SELECT klient_id FROM klienci LEFT JOIN adresy ON klienci.klient_id = adresy.adres_klient_id WHERE adres_id IS NULL;
+SELECT klient_id FROM klienci WHERE klient_id NOT IN (SELECT DISTINCT adres_klient_id FROM adresy);
+7.SELECT CONCAT(klient_imie, ', ', adres_miejscowosc) AS dane_klienta FROM klienci JOIN adresy ON klienci.klient_id = adresy.adres_klient_id;
+8.SELECT klient_imie, adres_miejscowosc FROM klienci CROSS JOIN adresy;
+9.SELECT k.klient_imie, a.adres_miejscowosc
+FROM klienci k
+JOIN adresy a ON k.klient_id = a.adres_klient_id
+WHERE k.klient_imie LIKE 'A%' OR k.klient_imie LIKE 'M%'
+ORDER BY k.klient_imie ASC;

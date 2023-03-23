@@ -1,0 +1,12 @@
+1. SELECT COUNT(*) FROM pracownicy;
+2. SELECT COUNT(pesel) FROM pracownicy;
+3. SELECT COUNT(*) FROM pracownicy WHERE stanowisko = 'sprzedawca';
+4. SELECT COUNT(*) AS 'liczba sprzedawców' FROM pracownicy WHERE stanowisko = 'sprzedawca';
+5. SELECT AVG(placa) AS 'średnie wynagrodzenie' FROM pracownicy;
+6. SELECT MAX(placa) AS 'maksymalne wynagrodzenie' FROM pracownicy;
+7. SELECT MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy;
+8. SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', 
+MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy;
+9. SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', 
+MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy WHERE stanowisko='sprzedawca';
+10.SELECT SUM(placa) AS 'suma wynagrodzeń' FROM pracownicy;
